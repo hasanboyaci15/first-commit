@@ -33,7 +33,7 @@ public class BasicNavigation {
         driver.navigate().forward();
         System.out.println("Title"+ driver.getTitle());
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         driver.close();
 
