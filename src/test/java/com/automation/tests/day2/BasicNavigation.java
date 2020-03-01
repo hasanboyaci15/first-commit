@@ -12,6 +12,16 @@ public class BasicNavigation {
         WebDriver driver=new ChromeDriver();
         //In selenium, everything starts from WebDriver interface
         driver.get("http://google.com"); //to open a websites
+        driver.manage().window().maximize();
+
+        String title=driver.getTitle();
+        String expectedTitle="Google";
+        System.out.println("Title is ..."+title);
+        if (expectedTitle.equalsIgnoreCase(title)){
+            System.out.println("TEST PASSED");
+        }else {
+            System.out.println("TEST FAIL");
+        }
 
         Thread.sleep(3000);
         driver.close();
