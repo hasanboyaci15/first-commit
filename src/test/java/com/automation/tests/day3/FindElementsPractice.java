@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FindElementsPractice {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver=new ChromeDriver();
@@ -24,6 +24,18 @@ public class FindElementsPractice {
         WebElement signUP=driver.findElement(By.name("wooden_spoon"));
 
         signUP.submit();
+        Thread.sleep(2000);
+        String expected ="Thank you for signing up. Click the button below to return to the home page.";
+
+        WebElement mesage=driver.findElement(By.className("subheader"));
+
+        String actual=mesage.getText();
+        if(expected.equals(actual)){
+            System.out.println("TEST PASSED");
+        }else {
+            System.out.println("TEST FAILED");
+        }
+
 
 
         driver.quit();
